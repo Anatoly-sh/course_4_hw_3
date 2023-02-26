@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "course-4-hw-3"
+name = "course_4_hw_3"
 version = "0.1.0"
 description = ""
 authors = ["Анатолий Шаповалов <anatoly.shapovalov@gmail.com>"]
