@@ -11,14 +11,14 @@ class TestNode(unittest.TestCase):
         assert node_10.data == 10
         assert node_10.next_node is None
 
-    def test_node_inext_node(self):
+    def test_node_next_node(self):
         """Проверка, что next_node ссылается на узел"""
         node_10 = Node(10)
         node2 = Node(222, node_10)
         assert node2.next_node is node_10
 
 
-class TestStack(unittest.TestCase):
+class TestStackPush(unittest.TestCase):
     """Проверка данных и границы стека"""
     def test_stack_top(self):
         node = Node(None)
@@ -28,3 +28,17 @@ class TestStack(unittest.TestCase):
         assert stack.top.data == 'data2'
         assert stack.top.next_node.data == 'data1'
         assert stack.top.next_node.next_node.data is None
+
+
+class TestStackPop(unittest.TestCase):
+    """Проверка извлечения данных и границы стека"""
+    def test_stack_top(self):
+        node = Node(None)
+        stack = Stack(node)
+        stack.push('data1')
+        stack.push('data2')
+        stack.push('data3')
+        assert stack.pop() == 'data3'
+        assert stack.pop() == 'data2'
+        assert stack.pop() == 'data1'
+        assert stack.pop() is None
