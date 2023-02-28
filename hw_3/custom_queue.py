@@ -1,8 +1,4 @@
-class Node:
-    """Класс узла с данными и адресом соседнего узла"""
-    def __init__(self, data, next_node=None):
-        self.data = data
-        self.next_node = next_node
+from hw_3.utils import Node
 
 
 class Queue:
@@ -24,7 +20,6 @@ class Queue:
 
 queue = Queue()
 
-queue = Queue()
 queue.enqueue('data1')
 queue.enqueue('data2')
 queue.enqueue('data3')
