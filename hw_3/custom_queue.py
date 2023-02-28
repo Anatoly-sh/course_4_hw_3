@@ -13,7 +13,25 @@ class Queue:
 
     def enqueue(self, data):
         """Помещает данные в очередь"""
-        new_node = Node(data, self.tail)
-        self.tail = new_node
+        new_node = Node(data)
         if self.head is None:
             self.head = new_node
+            self.tail = new_node
+        else:
+            self.tail.next_node = new_node
+            self.tail = new_node
+
+
+queue = Queue()
+
+queue = Queue()
+queue.enqueue('data1')
+queue.enqueue('data2')
+queue.enqueue('data3')
+
+print(queue.head.data)
+print(queue.head.next_node.data)
+print(queue.tail.data)
+print(queue.tail.next_node)
+print(queue.tail.next_node.data)
+
