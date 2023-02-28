@@ -21,4 +21,3 @@ class Stack:
         pop_adr = self.top
         self.top = self.top.next_node
         return pop_adr.data
-
