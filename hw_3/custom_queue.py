@@ -19,9 +19,10 @@ class Queue:
 
     def dequeue(self):
         """Извлекает данные из очереди"""
+        if self.head is None:
+            return None
         data = self.head.data
         self.head = self.head.next_node
-
         return data
 
 
@@ -39,5 +40,7 @@ if __name__ == '__main__':
 
     print(queue.dequeue())
     print(queue.dequeue())
+    print(queue.dequeue())
+    queue.enqueue('data4')
     print(queue.dequeue())
     print(queue.dequeue())
