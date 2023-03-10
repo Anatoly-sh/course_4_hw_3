@@ -25,14 +25,28 @@ class LinkedList:
             self.end_point.next_node = new_node
             self.end_point = new_node
 
+    def print_ll(self):
+        ll_string = ''
+        node = self.start_point
+        if node is None:
+            print(None)
+        while node:
+            ll_string += f' {str(node.data)} ->'
+            node = node.next_node
+        ll_string += ' None'
+        print(ll_string)
 
-ll = LinkedList()
 
+if __name__ == '__main__':
+    ll = LinkedList()
 
-ll.insert_beginning({'id': 1})
-ll.insert_at_end({'id': 2})
-ll.insert_at_end({'id': 3})
-ll.insert_beginning({'id': 0})
-#ll.print_ll(){'id': 0}-> {'id': 1} -> {'id': 2} -> {'id': 3} -> None
-print(ll.end_point)
-print(ll.start_point.data)
+    ll.insert_beginning({'id': 3})
+    ll.insert_beginning({'id': 2})
+    ll.insert_beginning({'id': 1})
+    ll.insert_at_end({'id': 5})
+    ll.insert_at_end({'id': 6})
+    ll.insert_beginning({'id': 0})
+    ll.print_ll()
+    # {'id': 0}-> {'id': 1} -> {'id': 2} -> {'id': 3} -> None
+    print(ll.end_point)
+    print(ll.start_point.data)
