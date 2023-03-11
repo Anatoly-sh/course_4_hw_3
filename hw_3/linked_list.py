@@ -16,7 +16,6 @@ class LinkedList:
     def insert_beginning(self, data):
         """ Тут добавление элемента в начале списка"""
         new_node = Node(data, self.start_point)
-        # new_node.next = self.start_point
         self.start_point = new_node
         if self.end_point is None:
             self.end_point = new_node
@@ -53,3 +52,12 @@ if __name__ == '__main__':
     ll.insert_beginning({'id': 0})
     ll.print_ll()
     # {'id': 0}-> {'id': 1} -> {'id': 2} -> {'id': 3} -> None
+
+    node = ll.start_point
+    print(node.data)
+    print(ll.start_point.data)
+    print(ll.start_point.next_node.data)
+    print(ll.start_point.next_node.next_node.data)
+    print(ll.start_point.next_node.next_node.next_node.data)
+
+
