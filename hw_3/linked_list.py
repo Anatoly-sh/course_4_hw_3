@@ -7,23 +7,30 @@ class Node:
 
 class LinkedList:
     """Класс связанного списка"""
+    current_node = None
 
-    def __init__(self, start_point=None, end_point = None):
+    def __init__(self, start_point=None, end_point=None):
         self.start_point = start_point
         self.end_point = end_point
 
     def insert_beginning(self, data):
-        """ Тут добавление элемента в начале"""
+        """ Тут добавление элемента в начале списка"""
         new_node = Node(data, self.start_point)
-        new_node.nextnode = self.start_point
+        # new_node.next = self.start_point
         self.start_point = new_node
+        if self.end_point is None:
+            self.end_point = new_node
+            LinkedList.current_node = new_node
 
     def insert_at_end(self, data):
-        """Тут добавление элемента в конце"""
+        """Тут добавление элемента в конце списка"""
         new_node = Node(data)
-        if self.end_point is not None:
-            self.end_point.next_node = new_node
-            self.end_point = new_node
+        if LinkedList.current_node is not None:
+            LinkedList.current_node.next_node = new_node
+        self.end_point = new_node
+        LinkedList.current_node = new_node
+        if self.start_point is None:
+            self.start_point = new_node
 
     def print_ll(self):
         ll_string = ''
@@ -40,13 +47,9 @@ class LinkedList:
 if __name__ == '__main__':
     ll = LinkedList()
 
-    ll.insert_beginning({'id': 3})
-    ll.insert_beginning({'id': 2})
     ll.insert_beginning({'id': 1})
-    ll.insert_at_end({'id': 5})
-    ll.insert_at_end({'id': 6})
+    ll.insert_at_end({'id': 2})
+    ll.insert_at_end({'id': 3})
     ll.insert_beginning({'id': 0})
     ll.print_ll()
     # {'id': 0}-> {'id': 1} -> {'id': 2} -> {'id': 3} -> None
-    print(ll.end_point)
-    print(ll.start_point.data)
