@@ -54,10 +54,11 @@ if __name__ == '__main__':
     # {'id': 0}-> {'id': 1} -> {'id': 2} -> {'id': 3} -> None
 
     node = ll.start_point
-    print(node.data)
-    print(ll.start_point.data)
-    print(ll.start_point.next_node.data)
-    print(ll.start_point.next_node.next_node.data)
-    print(ll.start_point.next_node.next_node.next_node.data)
+    # print(node.data)
+    # print(ll.start_point.data)
+    # print(ll.start_point.next_node.data)
+    # print(ll.start_point.next_node.next_node.data)
+    # print(ll.start_point.next_node.next_node.next_node.data)
+    # 6
 
 
