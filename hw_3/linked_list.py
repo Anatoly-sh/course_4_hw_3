@@ -31,6 +31,29 @@ class LinkedList:
         if self.start_point is None:
             self.start_point = new_node
 
+    def to_list(self):
+        """Возвращает список с данными, содержащимися в односвязном списке"""
+        node = self.start_point
+        while node is not None:
+            self.lst.append(node.data)
+            node = node.next_node
+        return self.lst
+
+    def get_data_by_id(self, key):
+        self.key = key
+        """
+        Возвращает первый найденный в LinkedList словарь с ключом id,
+        значение которого равно переданному в метод значению.
+        """
+        node = self.start_point
+        while node is not None:
+            # print(node.data.get('id'))
+            if node.data.get('id') == self.key:
+                return f'{node.data}'
+            else:
+                node = node.next_node
+        return f'По указанному ключу нет данных'
+
     def print_ll(self):
         ll_string = ''
         node = self.start_point
