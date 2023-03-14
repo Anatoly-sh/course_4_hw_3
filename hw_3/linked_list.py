@@ -74,10 +74,10 @@ class LinkedList:
 if __name__ == '__main__':
     ll = LinkedList()
 
-    # ll.insert_beginning({'id': 1})
-    # ll.insert_at_end({'id': 2})
-    # ll.insert_at_end({'id': 3})
-    # ll.insert_beginning({'id': 0})
+    ll.insert_beginning({'id': 1})
+    ll.insert_at_end({'id': 2})
+    ll.insert_at_end({'id': 3})
+    ll.insert_beginning({'id': 0})
     # ll.print_ll()
     # {'id': 0}-> {'id': 1} -> {'id': 2} -> {'id': 3} -> None
 
@@ -98,9 +98,9 @@ if __name__ == '__main__':
     #
     # print(user_data)
     # tru/except
-    ll.insert_beginning({'id': 1, 'username': 'lazzy508509'})
-    ll.insert_at_end('idusername')
-    ll.insert_at_end([1, 2, 3])
-    ll.insert_at_end({'id': 2, 'username': 'mosh_s'})
-    user_data = ll.get_data_by_id(2)
+    # ll.insert_beginning({'id': 1, 'username': 'lazzy508509'})
+    # ll.insert_at_end('idusername')
+    # ll.insert_at_end([1, 2, 3])
+    # ll.insert_at_end({'id': 2, 'username': 'mosh_s'})
+    user_data = ll.get_data_by_id(3)
     print(user_data)
