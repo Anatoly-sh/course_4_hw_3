@@ -1,5 +1,6 @@
 class Node:
     """Класс узла с данными и адресом соседнего узла"""
+
     def __init__(self, data, next_node=None):
         self.data = data
         self.next_node = next_node
@@ -48,12 +49,15 @@ class LinkedList:
         """
         node = self.start_point
         while node is not None:
-            # print(node.data.get('id'))
-            if node.data.get('id') == self.key:
+            try:
+                key = node.data.get('id')
+            except AttributeError:
+                print(f'Данные не являются словарем или в словаре нет id')
+            if key == self.key:
                 return f'{node.data}'
             else:
                 node = node.next_node
-        return f'По указанному ключу нет данных'
+
 
     def print_ll(self):
         ll_string = ''
@@ -84,16 +88,19 @@ if __name__ == '__main__':
     # print(ll.start_point.next_node.next_node.data)
     # print(ll.start_point.next_node.next_node.next_node.data)
     # 6
-    ll.insert_beginning({'id': 1, 'username': 'lazzy508509'})
-    ll.insert_at_end({'id': 2, 'username': 'mik.roz'})
-    ll.insert_at_end({'id': 3, 'username': 'mosh_s'})
-    ll.insert_beginning({'id': 0, 'username': 'serebro'})
+    # ll.insert_beginning({'id': 1, 'username': 'lazzy508509'})
+    # ll.insert_at_end({'id': 2, 'username': 'mik.roz'})
+    # ll.insert_at_end({'id': 3, 'username': 'mosh_s'})
+    # ll.insert_beginning({'id': 0, 'username': 'serebro'})
     # lst = ll.to_list()
     # for item in lst:
     #     print(item)
     #
-    user_data = ll.get_data_by_id(3)
+    # print(user_data)
+    # tru/except
+    ll.insert_beginning({'id': 1, 'username': 'lazzy508509'})
+    ll.insert_at_end('idusername')
+    ll.insert_at_end([1, 2, 3])
+    ll.insert_at_end({'id': 2, 'username': 'mosh_s'})
+    user_data = ll.get_data_by_id(2)
     print(user_data)
-
-
-
