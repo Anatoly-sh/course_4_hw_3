@@ -48,3 +48,21 @@ class TestInsertAtEnd(unittest.TestCase):
         assert ll.start_point.data == {'id': 11}
         assert ll.start_point.next_node.data == {'id': 22}
         assert ll.start_point.next_node.next_node.data == {'id': 33}
+
+
+
+class TestToListAndGet(unittest.TestCase):
+    def test_to_list_and_get_data(self):
+        lll = LinkedList()
+        lll.insert_beginning({'id': 1})
+        lll.insert_at_end({'id': 2})
+        lll.insert_at_end({'id': 3})
+        lll.insert_beginning({'id': 0})
+
+        """Ожидается list с данными односвязного списка"""
+        assert isinstance(lll.to_list(), list)
+
+        """Ожидается получение первого найденного словаря по ключу"""
+        assert lll.get_data_by_id(2) == "{'id': 2}"
+        assert lll.get_data_by_id(4) is None
+
